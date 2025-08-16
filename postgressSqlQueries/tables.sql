@@ -261,7 +261,7 @@ CREATE TABLE cart_items (
     quantity INT NOT NULL DEFAULT 1,
     added_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     FOREIGN KEY (cart_id) REFERENCES carts(cart_id) ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES products(product_id)
+    FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
 
@@ -292,8 +292,5 @@ CREATE TABLE save_for_later_items (
     product_id INT NOT NULL,
     added_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     FOREIGN KEY (list_id) REFERENCES save_for_later_lists(list_id) ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES products(product_id)
+    FOREIGN KEY (product_id) REFERENCES products(id)
 );
-
-
-
